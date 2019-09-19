@@ -1,0 +1,23 @@
+body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 6fr 2fr;
+    grid-template-areas:
+    "header"
+    "main"
+    "main"
+    "main"
+    "main"
+    "main"
+    "main"
+    "footer";
+    header {
+        grid-area: header;
+    }
+    main {
+        grid-area: main;
+    }
+    footer {
+        grid-area: footer;
+    }
+}

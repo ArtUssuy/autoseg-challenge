@@ -1,5 +1,9 @@
-@import './components/header';
+// VENDORS
+@import "./vendors/reset.scss";
 
-html {
-    background-color: black;
-}
+// CREATE LIST
+@import "./components/createList/createList-grid.scss";
+@import "./components/createList/createList-header.scss";
+@import "./components/createList/createList-footer.scss";
+@import "./components/createList/createList-main.scss";
+

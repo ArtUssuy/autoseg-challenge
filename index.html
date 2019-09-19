@@ -9,6 +9,72 @@
 </head>
 <body>
     
+    <header>
+        <div class="header-logo-wrapper">
+            <h1>Do it Now</h1>
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+
+        <div class="header-user-wrapper">
+            <img src="" alt="" class="img-user">
+            <span>Nome User</span>
+        </div>
+    </header>
+
+    <main>
+
+        CRIAR LISTA
+        <input placeholder="Digite o nome da lista..." type="text" class="nameList" id="nameList">
+        <input placeholder="Adicionar tarefa" type="text" class="nameTask" id="nameTask">
+        <img id="addTask-icon" src="" alt="">
+
+        <hr>
+
+        <div class="buttons-wrapper">
+            <button>Cancelar</button>
+            <button onclick="addListButton" id="addList">Criar lista</button>
+        </div>
+
+        <div class="list-wrapper">
+            <div class="list-wrapper" id="list-wrapper">
+                <div class="list">
+                    <div class="list-details-wrapper">
+                        <img src="" alt="">
+                        <span id="firstList">/span>
+                    </div>
+
+                    <div class="list-button-wrapper ">
+                        <button id="editList" class="edit-list" >
+                            <img src="" alt="">
+                        </button>
+                        <button id="deleteList" class="delete-list"" >
+                            <img src="" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="tasks">
+                    <div class="task-details-wrapper">
+                        <input type="checkbox">
+                        <span id="firstTask">Tarefa 1</span>
+                    </div>
+
+                    <div class="task-button-wrapper">
+                        <button id="editList" class="edit-list" >
+                            <img src="" alt="">
+                        </button>
+                        <button id="deleteList" class="delete-list"" >
+                            <img src="" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+footer
+    </footer>
     <script src="/js/createList.js"></script>
 </body>
 </html>
