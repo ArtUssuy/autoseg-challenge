@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "Sf Pro Display Regular";
+    src: url("/media/fonts/SF-Pro-Display-Regular.otf") format("opentype");;
+}
+@font-face {
+    font-family: "Sf Pro Display Light";
+    src: url("/media/fonts/SF-Pro-Display-Light.otf") format("opentype");;
+}
+
+$sf-regular: "Sf Pro Display Regular";
+$sf-light: "Sf Pro Display Light";

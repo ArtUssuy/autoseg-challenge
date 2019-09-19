@@ -3,30 +3,48 @@ main {
     margin:0 auto;
     display: flex;
     flex-direction: column;
+    h1 {
+        font-family: $sf-regular;
+        font-size: 20px;
+        color: #574437;
+        margin: 10px 0;
+    }
     input {
         margin-bottom: 10px;
         padding: 10px;
         &:focus {
             outline: 0;
         }
+        &::placeholder {
+            font-family: $sf-light;
+            font-size: 15px;
+            color: #574437;
+        }
     }
     .buttons-wrapper {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         button {
             border: none;
-            padding: 10px 20px;
+            padding: 7.5px 20px;
             border-radius: 5px;
+            font-family: $sf-regular;
+            width: 30%;
+            font-size: 20px;
+            font-family: $sf-light;
             &:first-child {
                 background-color: #d3ce3d;
+                margin-right: 5%;
             }
             &:last-child {
                 background-color: #ef7734;
+                color: #FFF;
             }
         }
     }
     .list-wrapper {
         .list-wrapper {
+            margin-top: 20px;
             .list {
                 width: 100%;
                 margin: 0 auto;
@@ -39,7 +57,7 @@ main {
 
                     }
                     span {
-
+                        font-family: $sf-regular;
                     }
                 }
                 .list-button-wrapper {
@@ -58,7 +76,7 @@ main {
 
                     }
                     span {
-
+                        font-family: $sf-regular;
                     }
                 }
                 .task-button-wrapper {

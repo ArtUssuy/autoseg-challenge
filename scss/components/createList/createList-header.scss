@@ -1,19 +1,30 @@
 header {
     background-color: #574437;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vw;
     .header-logo-wrapper {
-        h1{
-
+        display: flex;
+        align-items: center;
+        span{
+            color: #c6c388;
+            font-family: $sf-regular;
+            font-size: 25px;
         }
         img {
 
         }
     }
     .header-user-wrapper {
+        display: flex;
+        align-items: center;
         img {
-
+            margin-right: 0.5vw;
         }
         span {
-            
+            font-family: $sf-regular;
+            color: #f1efa5;
         }
     }
 }
