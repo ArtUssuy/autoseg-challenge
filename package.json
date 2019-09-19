@@ -1,0 +1,19 @@
+{
+  "name": "autoseg-challenge",
+  "version": "1.0.0",
+  "description": "Desafio enviado pela AutoSeg, se trata de um formulario que permite criacao de listas, tarefas e subtarefas. O desenvolvimento será feito com o HTML, CSS & JS. Bibliotecas e plugins serão usados, tambem, durante a criacao do projeto.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
