@@ -7,14 +7,14 @@
             namesTasks: ["tarefa1", "tarefa2"]
         }
     ]
-    
+
     document.addEventListener("DOMContentLoaded", loadPage);
 
     function loadPage() {
-        console.log("loadPage function")
-        // prepare form
         const mainForm = document.getElementById("mainForm");
         mainForm.addEventListener("submit", submitForm)
+        const addTaskBtn = document.getElementById("addTask");
+        addTaskBtn.addEventListener("click", addTask)
         createListContent()
     }
 
@@ -25,7 +25,6 @@
             nameList: nameList,
             namesTasks: namesTasks
         }
-        
     }
 
     function submitForm(e) {
@@ -78,7 +77,15 @@
         })
         document.getElementById("lists-wrapper").innerHTML = newListDom
     }
+    
+    function addTask() {
+        console.log("add Task function")
 
-
+        // if(document.getElementById("namesTasks").value) {
+        //     return document.getElementById("namesTasks").value
+        // } else {
+        //     return
+        // }
+    }
 })();
 

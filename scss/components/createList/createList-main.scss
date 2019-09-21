@@ -24,10 +24,32 @@ main {
                 color: #574437;
             }
         }
+        .add-task-wrapper {
+            position: relative;
+            input {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            button {
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                top: 6px;
+                border: none;
+                background-color: transparent;
+                &:focus {
+                    outline: 0;
+                }
+                img {
+
+                }
+            }
+        }
         .buttons-wrapper {
             display: flex;
             justify-content: center;
             button {
+                cursor: pointer;
                 border: none;
                 padding: 7.5px 20px;
                 border-radius: 5px;
@@ -42,6 +64,9 @@ main {
                 &:last-child {
                     background-color: #ef7734;
                     color: #FFF;
+                }
+                &:focus {
+                    outline: 0;
                 }
             }
         }

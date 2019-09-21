@@ -29,14 +29,16 @@
         
         <h1>Criar lista</h1>
         <form action="" id="mainForm">
-            <input placeholder="Digite o nome da lista..." type="text" class="nameList" id="nameList">
-            <input placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
+            <input required="required" placeholder="Digite o nome da lista..." type="text" class="nameList" id="nameList">
+            <div class="add-task-wrapper">
+                <input placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
+                <button id="addTask" type="button"><img id="addTask-icon" src="/media/assets/botao_adicionar.png" alt=""></button>
+            </div>
             <div class="buttons-wrapper">
-                <button>Cancelar</button>
-                <button id="addBUttonList">Criar lista</button>
+                <button type="reset">Cancelar</button>
+                <button id="addButtonList">Criar lista</button>
             </div>
         </form>
-        <img id="addTask-icon" src="" alt="">
 
         <hr>
 
@@ -44,39 +46,6 @@
 
         <div class="list-wrapper" id="lists-wrapper">
 
-            <!-- <div class="list-wrapper" id="list-wrapper">
-                <div class="list">
-                    <div class="list-details-wrapper">
-                        <img src="" alt="">
-                        <span id="listName"></span>
-                    </div>
-
-                    <div class="list-button-wrapper ">
-                        <button id="editList" class="edit-list" >
-                            <img src="" alt="">
-                        </button>
-                        <button id="deleteList" class="delete-list"" >
-                            <img src="" alt="">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="tasks">
-                    <div class="task-details-wrapper">
-                        <input type="checkbox">
-                        <span id="taskName"></span>
-                    </div>
-
-                    <div class="task-button-wrapper">
-                        <button id="editList" class="edit-list" >
-                            <img src="" alt="">
-                        </button>
-                        <button id="deleteList" class="delete-list"" >
-                            <img src="" alt="">
-                        </button>
-                    </div>
-                </div>
-            </div> -->
 
 
         </div>
@@ -85,7 +54,6 @@
     </main>
 
     <footer>
-footer
     </footer>
     <script src="/js/createList.js"></script>
 </body>
