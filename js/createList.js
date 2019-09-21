@@ -1,35 +1,51 @@
 (function () { 
 
-    const lists = [
-        {
-            tarefa: "1",
-            tasks: [
-                {
-                    tarefa: "1"
-                }
-            ]
+    const lists = []
+    document.addEventListener("DOMContentLoaded", loadPage);
+
+    function loadPage() {
+        console.log("loadPage function")
+        const buttonAddList = document.getElementById("addBUttonList");
+        buttonAddList.addEventListener("click", addListButtonClick)
+    } 
+
+    function getValues() {
+        const nameList = document.getElementById("nameList").value
+        const namesTasks = document.getElementById("namesTasks").value
+        return {
+            nameList: nameList,
+            namesTasks: namesTasks
         }
-    ]
-
-    function createListsHtml(lists) {
-        const firstList = document.getElementById("firstList")
-        const firstTask = document.getElementById("firstTask")
     }
 
-
-
-
-    const addListButton = document.getElementById("addList")
-    const list2 = {
-        tarefa: "5",
-    }
-
-    lists[0].tasks.push(list2)
-    console.log(lists)
     function addListButtonClick() {
-        const nameListInput = document.getElementsByClassName("nameList")
+        const newList = {
+            listId: lists.length + 1,
+            nameList: getValues().nameList,
+            namesTasks: getValues().namesTasks
+        }
+        lists.push(newList)
+        console.log(lists)
     }
 
 
 
 })();
+
+
+/*
+
+funcoes
+
+- ao clicar no botao
+    - adicionar lista com tarefa
+        - push no array de listas
+        - array de listas deve ser carregado com a primeira lista
+            - funcao de carregar o array de listas no inicializar da pagina
+
+
+    - verificar se o nome da lista foi digitado
+    - verificar se o nome da tarefa foi digitado
+    - 
+
+*/

@@ -29,14 +29,14 @@
         
         <h1>Criar lista</h1>
         <input placeholder="Digite o nome da lista..." type="text" class="nameList" id="nameList">
-        <input placeholder="Adicionar tarefa" type="text" class="nameTask" id="nameTask">
+        <input placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
         <img id="addTask-icon" src="" alt="">
 
         <hr>
 
         <div class="buttons-wrapper">
             <button>Cancelar</button>
-            <button onclick="addListButton" id="addList">Criar lista</button>
+            <button id="addBUttonList">Criar lista</button>
         </div>
 
         <div class="list-wrapper">
@@ -44,7 +44,7 @@
                 <div class="list">
                     <div class="list-details-wrapper">
                         <img src="" alt="">
-                        <span id="firstList">firstlist</span>
+                        <span id="listName"></span>
                     </div>
 
                     <div class="list-button-wrapper ">
@@ -59,7 +59,7 @@
                 <div class="tasks">
                     <div class="task-details-wrapper">
                         <input type="checkbox">
-                        <span id="firstTask">firstask</span>
+                        <span id="taskName">firstask</span>
                     </div>
 
                     <div class="task-button-wrapper">
