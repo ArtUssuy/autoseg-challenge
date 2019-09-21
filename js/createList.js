@@ -1,13 +1,22 @@
 (function () { 
 
-    const lists = []
+    const lists = [
+        {
+            listId: 0,
+            nameList: "lista zero",
+            namesTasks: ["tarefa1", "tarefa2"]
+        }
+    ]
+    
     document.addEventListener("DOMContentLoaded", loadPage);
 
     function loadPage() {
         console.log("loadPage function")
+        // prepare form
         const mainForm = document.getElementById("mainForm");
         mainForm.addEventListener("submit", submitForm)
-    } 
+        createListContent()
+    }
 
     function getValues() {
         const nameList = document.getElementById("nameList").value
@@ -16,6 +25,7 @@
             nameList: nameList,
             namesTasks: namesTasks
         }
+        
     }
 
     function submitForm(e) {
@@ -26,23 +36,49 @@
             namesTasks: getValues().namesTasks
         }
         lists.push(newList)
+        createListContent()
     }
 
+    function createListContent() {
+        const newListDom = lists.map(a => {
+            return `<div class="list-wrapper" id="list-wrapper">
+                        <div class="list">
+                            <div class="list-details-wrapper">
+                                <img src="" alt="">
+                                <span id="listName">${a.nameList}</span>
+                            </div>
+
+                            <div class="list-button-wrapper ">
+                                <button id="editList" class="edit-list" >
+                                    <img src="" alt="">
+                                </button>
+                                <button id="deleteList" class="delete-list"" >
+                                    <img src="" alt="">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="tasks">
+                            <div class="task-details-wrapper">
+                                <input type="checkbox">
+                                <span id="taskName">${a.namesTasks}</span>
+                            </div>
+
+                            <div class="task-button-wrapper">
+                                <button id="editList" class="edit-list" >
+                                    <img src="" alt="">
+                                </button>
+                                <button id="deleteList" class="delete-list"" >
+                                    <img src="" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>`
+            
+        })
+        document.getElementById("lists-wrapper").innerHTML = newListDom
+    }
 
 
 })();
 
-
-/*
-
-funcoes
-
-- ao clicar no botao
-    - adicionar lista com tarefa
-        - push no array de listas
-        - array de listas deve ser carregado com a primeira lista
-            - funcao de carregar o array de listas no inicializar da pagina
-        - adicionar ao DOM
-
-
-*/
