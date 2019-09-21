@@ -13,8 +13,7 @@
     function loadPage() {
         const mainForm = document.getElementById("mainForm");
         mainForm.addEventListener("submit", submitForm)
-        const addTaskBtn = document.getElementById("addTask");
-        addTaskBtn.addEventListener("click", addTask)
+        addFunctionToAddTask()
         createListContent()
     }
 
@@ -80,12 +79,28 @@
     
     function addTask() {
         console.log("add Task function")
-
-        // if(document.getElementById("namesTasks").value) {
-        //     return document.getElementById("namesTasks").value
-        // } else {
-        //     return
-        // }
+        const inputTaskDom = 
+        `<div class="add-task-wrapper">
+            <input placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
+            <button class="addTask" id="addTask" type="button">
+                <img id="addTask-icon" src="/media/assets/botao_adicionar.png" alt="">
+            </button>
+        </div>`
+        
+        document.getElementById("add-task-container").innerHTML += inputTaskDom
+        addFunctionToAddTask()
     }
+
+    function addFunctionToAddTask() {
+        const addTaskBtn = document.getElementsByClassName("addTask");
+        addTaskBtn[addTaskBtn.length-1].addEventListener("click", addTask)
+    }
+
+
 })();
 
+/*
+- criar novo input a cada click
+    - mover o botao de + para o ultimo input
+- funcao de criar nova task deve ser movida para o ultimo input
+*/

@@ -24,24 +24,44 @@ main {
                 color: #574437;
             }
         }
-        .add-task-wrapper {
-            position: relative;
-            input {
-                width: 100%;
-                box-sizing: border-box;
-            }
-            button {
-                cursor: pointer;
-                position: absolute;
-                right: 0;
-                top: 6px;
-                border: none;
-                background-color: transparent;
-                &:focus {
-                    outline: 0;
+        .add-task-container {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            .add-task-wrapper {
+                position: relative;
+                input {
+                    width: 100%;
+                    box-sizing: border-box;
                 }
-                img {
-
+                button {
+                    cursor: pointer;
+                    position: absolute;
+                    right: 0;
+                    top: 6px;
+                    border: none;
+                    background-color: transparent;
+                    display: none;
+                    &:focus {
+                        outline: 0;
+                    }
+                    img {
+    
+                    }
+                }
+                &:last-child {
+                    input {
+                        display: block;
+                    }
+                    button {
+                        display: block;
+                        cursor: pointer;
+                        position: absolute;
+                        right: 0;
+                        top: 6px;
+                        border: none;
+                        background-color: transparent;
+                    }
                 }
             }
         }
