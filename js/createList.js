@@ -5,17 +5,14 @@
     const lists = [
         {
             listId: 0,
-            nameList: "lista zero",
-            namesTasks: ["tarefa1", "tarefa2"]
+            nameList: "Primeira Lista",
+            namesTasks: ["Tarefa 01 ", "Tarefa 02"]
         }
     ]
-
-    const inputsTasksArray = []
 
     // FUNCTION TRIGGERED WHEN DOM IS LOADED
     function loadPage() {
         mainFormSubmit()
-        
         createListContent()
         createInputTaskDom()
     }
@@ -50,9 +47,13 @@
 
     // RETURN VALUES FROM MAIN FORM
     function getValues() {
+        const namesTasks = []
         const nameList = document.getElementById("nameList").value
-        const namesTasks = document.getElementById("namesTasks").value
-        getValuesFromTasksInputs()
+
+        for(nameTask of document.getElementsByClassName("namesTasks")) {
+            namesTasks.push(nameTask.value)
+        }
+
         return {
             nameList: nameList,
             namesTasks: namesTasks
@@ -90,22 +91,23 @@
                                 </button>
                             </div>
                         </div>
+                        ${a.namesTasks.map((c) => {
+                            return `<div class="tasks">
+                                <div class="task-details-wrapper">
+                                    <input type="checkbox">
+                                    <span id="taskName">${c}</span>
+                                </div>
 
-                        <div class="tasks">
-                            <div class="task-details-wrapper">
-                                <input type="checkbox">
-                                <span id="taskName">${a.namesTasks}</span>
-                            </div>
-
-                            <div class="task-button-wrapper">
-                                <button id="editList" class="edit-list" >
-                                    <img src="" alt="">
-                                </button>
-                                <button id="deleteList" class="delete-list"" >
-                                    <img src="" alt="">
-                                </button>
-                            </div>
-                        </div>
+                                <div class="task-button-wrapper">
+                                    <button id="editList" class="edit-list" >
+                                        <img src="" alt="">
+                                    </button>
+                                    <button id="deleteList" class="delete-list"" >
+                                        <img src="" alt="">
+                                    </button>
+                                </div>
+                            </div>`
+                        }).join('')}
                     </div>`
             
         })
@@ -118,16 +120,4 @@
         addTaskBtn[addTaskBtn.length-1].addEventListener("click", addTask)
     }
 
-    // RETURN VALUES FROM THE TASKS INPUTS
-    function getValuesFromTasksInputs() {
-        const taskInputs = document.getElementsByClassName("namesTasks")
-        console.log(taskInputs)
-    }
-
 })();
-
-/*
-- criar novo input a cada click
-    - mover o botao de + para o ultimo input
-- funcao de criar nova task deve ser movida para o ultimo input
-*/
