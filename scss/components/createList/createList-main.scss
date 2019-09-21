@@ -9,36 +9,40 @@ main {
         color: #574437;
         margin: 10px 0;
     }
-    input {
-        margin-bottom: 10px;
-        padding: 10px;
-        &:focus {
-            outline: 0;
-        }
-        &::placeholder {
-            font-family: $sf-light;
-            font-size: 15px;
-            color: #574437;
-        }
-    }
-    .buttons-wrapper {
+    form {
         display: flex;
-        justify-content: center;
-        button {
-            border: none;
-            padding: 7.5px 20px;
-            border-radius: 5px;
-            font-family: $sf-regular;
-            width: 30%;
-            font-size: 20px;
-            font-family: $sf-light;
-            &:first-child {
-                background-color: #d3ce3d;
-                margin-right: 5%;
+        flex-direction: column;
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            &:focus {
+                outline: 0;
             }
-            &:last-child {
-                background-color: #ef7734;
-                color: #FFF;
+            &::placeholder {
+                font-family: $sf-light;
+                font-size: 15px;
+                color: #574437;
+            }
+        }
+        .buttons-wrapper {
+            display: flex;
+            justify-content: center;
+            button {
+                border: none;
+                padding: 7.5px 20px;
+                border-radius: 5px;
+                font-family: $sf-regular;
+                width: 30%;
+                font-size: 20px;
+                font-family: $sf-light;
+                &:first-child {
+                    background-color: #d3ce3d;
+                    margin-right: 5%;
+                }
+                &:last-child {
+                    background-color: #ef7734;
+                    color: #FFF;
+                }
             }
         }
     }

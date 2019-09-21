@@ -5,8 +5,8 @@
 
     function loadPage() {
         console.log("loadPage function")
-        const buttonAddList = document.getElementById("addBUttonList");
-        buttonAddList.addEventListener("click", addListButtonClick)
+        const mainForm = document.getElementById("mainForm");
+        mainForm.addEventListener("submit", submitForm)
     } 
 
     function getValues() {
@@ -18,14 +18,14 @@
         }
     }
 
-    function addListButtonClick() {
+    function submitForm(e) {
+        e.preventDefault()
         const newList = {
             listId: lists.length + 1,
             nameList: getValues().nameList,
             namesTasks: getValues().namesTasks
         }
         lists.push(newList)
-        console.log(lists)
     }
 
 
@@ -42,10 +42,7 @@ funcoes
         - push no array de listas
         - array de listas deve ser carregado com a primeira lista
             - funcao de carregar o array de listas no inicializar da pagina
+        - adicionar ao DOM
 
-
-    - verificar se o nome da lista foi digitado
-    - verificar se o nome da tarefa foi digitado
-    - 
 
 */

@@ -28,16 +28,19 @@
 
         
         <h1>Criar lista</h1>
-        <input placeholder="Digite o nome da lista..." type="text" class="nameList" id="nameList">
-        <input placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
+        <form action="" id="mainForm">
+            <input placeholder="Digite o nome da lista..." type="text" class="nameList" id="nameList">
+            <input placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
+            <div class="buttons-wrapper">
+                <button>Cancelar</button>
+                <button id="addBUttonList">Criar lista</button>
+            </div>
+        </form>
         <img id="addTask-icon" src="" alt="">
 
         <hr>
 
-        <div class="buttons-wrapper">
-            <button>Cancelar</button>
-            <button id="addBUttonList">Criar lista</button>
-        </div>
+
 
         <div class="list-wrapper">
             <div class="list-wrapper" id="list-wrapper">
