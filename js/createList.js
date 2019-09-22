@@ -20,12 +20,20 @@
         createListContent()
         createInputTaskDom()
         addListenerDeleteTask()
+        addListenerDeleteList()
     }
 
     function addListenerDeleteTask() {
         const deleteTaskButtons = document.querySelectorAll("button.delete-task")
         deleteTaskButtons.forEach((deleteTaskButton) => {
             deleteTaskButton.addEventListener("click", deleteTask);
+        });
+    }
+
+    function addListenerDeleteList() {
+        const deleteListsButtons = document.querySelectorAll("button#deleteList")
+        deleteListsButtons.forEach((deleteListButton) => {
+            deleteListButton.addEventListener("click", deleteList);
         });
     }
 
@@ -51,7 +59,6 @@
                         ${a.namesTasks.map((c) => {
                             return `<div class="tasks">
                                 <div class="task-details-wrapper">
-                                    <input type="checkbox">
                                     <span id="taskName">${c}</span>
                                 </div>
 
@@ -65,6 +72,7 @@
                     </div>`
         }).join('')
         document.getElementById("lists-wrapper").innerHTML = newListDom
+        addListenerDeleteList()
     }
 
     // ADD LISTENER TO MAIN FORM SUBMIT
@@ -76,7 +84,7 @@
     // CREATE FIRST INPUT INSIDE DOM
     function createInputTaskDom() {
         const firstInputDom = `<div class="add-task-wrapper">
-                                    <input value="" placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
+                                    <input required="required" value="" placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
                                     <button class="addTask" id="addTask" type="button">
                                         <img id="addTask-icon" src="/media/assets/botao_adicionar.png" alt="">
                                     </button>
@@ -86,7 +94,6 @@
         document.getElementById("add-task-container").innerHTML = firstInputDom
         addFunctionToLastInput()
     }
-
 
 /* INPUT TASKS FUNCTIONS ************************************************************************ */ 
 
@@ -99,6 +106,7 @@
         addListenerDeleteTask()
     }
 
+    // DELETE TASK FROM DOM AND FROM ARRAY LISTS
     function deleteTask(e) {
 
         e.path.map((path) => {
@@ -138,7 +146,6 @@
         addListenerDeleteTask()
     }
 
-
     // RETURN VALUES FROM MAIN FORM
     function getValues() {
         const namesTasks = []
@@ -149,18 +156,31 @@
         }
 
         return {
-            nameList: nameList,
-            namesTasks: namesTasks
+            nameList,
+            namesTasks
         }
     }
 
+    function deleteList(e) {
+        e.path.map((path) => {
+            if(path.className === "list-wrapper") {
+                lists.map((list, b)=> {
+                    if (list.nameList == path.firstElementChild.firstElementChild.lastElementChild.textContent) {
+                        lists.splice(b, 1)
+                        path.remove()
+                    }
+                })
+
+            }
+        })
+    }
 })();
 
 
 /*
 
-- IMPLEMENTAR FUNCOES DE EXCLUIR E EDITAR 
+- IMPLEMENTAR FUNCAO PARA DELETAR LISTA
+- IMLEMENTAR FUNCAO PARA EDITAR NOME DA LISTA
 
-- FUNCOES ESTAO DESORGANIZADAS
-    - ENTENDER TUDO QUE DIGITEI E ORGANIZAR
+
 */
