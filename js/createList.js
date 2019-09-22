@@ -75,10 +75,11 @@
             
 
         document.getElementById("add-task-container").innerHTML = firstInputDom
-        addFunctionToLastInput()
+        addListenerToLastInput()
     }
 
-    // ADD LISTENERS
+/* ADD LISTENERS *************************************************************** */
+
     function addListenerDeleteTask() {
         const deleteTaskButtons = document.querySelectorAll("button.delete-task")
         deleteTaskButtons.forEach((deleteTaskButton) => {
@@ -106,6 +107,13 @@
         mainForm.addEventListener("submit", submitForm)
     }
 
+    // CREATE A LISTENER ONLY TO THE LAST TASK INPUT
+    function addListenerToLastInput() {
+        const addTaskBtn = document.getElementsByClassName("addTask");
+        addTaskBtn[addTaskBtn.length-1].addEventListener("click", addTask)
+    }
+
+
 /* INPUT TASKS FUNCTIONS ************************************************************************ */ 
 
     // ADD INPUT TASK TO DOM
@@ -113,7 +121,7 @@
         newInputDom = document.getElementById("add-task-container").lastChild.cloneNode(true)
         newInputDom.firstElementChild.value = ""
         document.getElementById("add-task-container").appendChild(newInputDom)
-        addFunctionToLastInput()
+        addListenerToLastInput()
         addListenerDeleteTask()
     }
 
@@ -134,12 +142,6 @@
             }
         })
         console.log(lists)
-    }
-
-    // ADD LISTENER ALWAYS TO THE LAST TASK INPUT
-    function addFunctionToLastInput() {
-        const addTaskBtn = document.getElementsByClassName("addTask");
-        addTaskBtn[addTaskBtn.length-1].addEventListener("click", addTask)
     }
 
 /* LIST ADD FUNCTIONS ************************************************************************ */ 
