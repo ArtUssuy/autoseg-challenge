@@ -110,7 +110,11 @@ main {
                     }
                 }
                 .list-button-wrapper {
-
+                    button {
+                        cursor: pointer;
+                        background-color: transparent;
+                        border: none;
+                    }
                 }
             }
             .tasks {
@@ -130,6 +134,9 @@ main {
                 }
                 .task-button-wrapper {
                     button {
+                        cursor: pointer;
+                        background-color: transparent;
+                        border: none;
                         img {
 
                         }
