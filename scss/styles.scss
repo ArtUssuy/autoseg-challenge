@@ -2,7 +2,7 @@
 @import "./vendors/reset.scss";
 @import "./vendors/fonts.scss";
 
-// CREATE LIST
+// CREATE LIST PAGE
 @import "./components/createList/createList-grid.scss";
 @import "./components/createList/createList-header.scss";
 @import "./components/createList/createList-footer.scss";
@@ -10,3 +10,6 @@
 
 // MAIN PAGE
 @import "./components/mainPage/mainPage.scss";
+
+// LISTS PAGE
+@import "./components/lists/lists.scss";

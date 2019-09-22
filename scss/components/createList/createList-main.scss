@@ -1,156 +1,158 @@
-main {
-    width: 500px;
-    margin:0 auto;
-    display: flex;
-    flex-direction: column;
-    h1 {
-        font-family: $sf-regular;
-        font-size: 20px;
-        color: #574437;
-        margin: 10px 0;
-    }
-    form {
+#list-creation {
+    main {
+        width: 500px;
+        margin:0 auto;
         display: flex;
         flex-direction: column;
-        input {
-            margin-bottom: 10px;
-            padding: 10px;
-            &:focus {
-                outline: 0;
-            }
-            &::placeholder {
-                font-family: $sf-light;
-                font-size: 15px;
-                color: #574437;
-            }
+        h1 {
+            font-family: $sf-regular;
+            font-size: 20px;
+            color: #574437;
+            margin: 10px 0;
         }
-        .add-task-container {
+        form {
             display: flex;
             flex-direction: column;
-            box-sizing: border-box;
-            .add-task-wrapper {
-                position: relative;
-                input {
-                    width: 100%;
-                    box-sizing: border-box;
+            input {
+                margin-bottom: 10px;
+                padding: 10px;
+                &:focus {
+                    outline: 0;
                 }
-                button {
-                    cursor: pointer;
-                    position: absolute;
-                    right: 0;
-                    top: 6px;
-                    border: none;
-                    background-color: transparent;
-                    display: none;
-                    &:focus {
-                        outline: 0;
-                    }
-                    img {
-    
-                    }
+                &::placeholder {
+                    font-family: $sf-light;
+                    font-size: 15px;
+                    color: #574437;
                 }
-                &:last-child {
+            }
+            .add-task-container {
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                .add-task-wrapper {
+                    position: relative;
                     input {
-                        display: block;
+                        width: 100%;
+                        box-sizing: border-box;
                     }
                     button {
-                        display: block;
                         cursor: pointer;
                         position: absolute;
                         right: 0;
                         top: 6px;
                         border: none;
                         background-color: transparent;
-                    }
-                }
-            }
-        }
-        .buttons-wrapper {
-            display: flex;
-            justify-content: center;
-            button {
-                cursor: pointer;
-                border: none;
-                padding: 7.5px 20px;
-                border-radius: 5px;
-                font-family: $sf-regular;
-                width: 30%;
-                font-size: 20px;
-                font-family: $sf-light;
-                &:first-child {
-                    background-color: #d3ce3d;
-                    margin-right: 5%;
-                }
-                &:last-child {
-                    background-color: #ef7734;
-                    color: #FFF;
-                }
-                &:focus {
-                    outline: 0;
-                }
-            }
-        }
-    }
-    .list-wrapper {
-        .list-wrapper {
-            margin-top: 40px;
-            .list {
-                width: 100%;
-                margin: 0 auto;
-                border-bottom: 1px solid #60b999;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                .list-details-wrapper {
-                    display: flex;
-                    align-items: center;
-                    padding-left: 10px;
-                    img {
-
-                    }
-                    .listName {
-                        font-family: $sf-regular;
-                    }
-                    .inputUpdateListName {
                         display: none;
                         &:focus {
                             outline: 0;
                         }
+                        img {
+        
+                        }
                     }
-                }
-                .list-button-wrapper {
-                    button {
-                        cursor: pointer;
-                        background-color: transparent;
-                        border: none;
-                        &:focus {
-                            outline: 0;
+                    &:last-child {
+                        input {
+                            display: block;
+                        }
+                        button {
+                            display: block;
+                            cursor: pointer;
+                            position: absolute;
+                            right: 0;
+                            top: 6px;
+                            border: none;
+                            background-color: transparent;
                         }
                     }
                 }
             }
-            .tasks {
-                width: 90%;
-                margin: 10px auto;
-                border-bottom: 1px solid #60b999;
+            .buttons-wrapper {
                 display: flex;
-                align-items: center;
-                justify-content: space-between;
-                .task-details-wrapper {
-                    input {
-
+                justify-content: center;
+                button {
+                    cursor: pointer;
+                    border: none;
+                    padding: 7.5px 20px;
+                    border-radius: 5px;
+                    font-family: $sf-regular;
+                    width: 30%;
+                    font-size: 20px;
+                    font-family: $sf-light;
+                    &:first-child {
+                        background-color: #d3ce3d;
+                        margin-right: 5%;
                     }
-                    span {
-                        font-family: $sf-regular;
+                    &:last-child {
+                        background-color: #ef7734;
+                        color: #FFF;
+                    }
+                    &:focus {
+                        outline: 0;
                     }
                 }
-                .task-button-wrapper {
-                    button {
-                        cursor: pointer;
-                        background-color: transparent;
-                        border: none;
+            }
+        }
+        .list-wrapper {
+            .list-wrapper {
+                margin-top: 40px;
+                .list {
+                    width: 100%;
+                    margin: 0 auto;
+                    border-bottom: 1px solid #60b999;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .list-details-wrapper {
+                        display: flex;
+                        align-items: center;
+                        padding-left: 10px;
                         img {
-
+    
+                        }
+                        .listName {
+                            font-family: $sf-regular;
+                        }
+                        .inputUpdateListName {
+                            display: none;
+                            &:focus {
+                                outline: 0;
+                            }
+                        }
+                    }
+                    .list-button-wrapper {
+                        button {
+                            cursor: pointer;
+                            background-color: transparent;
+                            border: none;
+                            &:focus {
+                                outline: 0;
+                            }
+                        }
+                    }
+                }
+                .tasks {
+                    width: 90%;
+                    margin: 10px auto;
+                    border-bottom: 1px solid #60b999;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .task-details-wrapper {
+                        input {
+    
+                        }
+                        span {
+                            font-family: $sf-regular;
+                        }
+                    }
+                    .task-button-wrapper {
+                        button {
+                            cursor: pointer;
+                            background-color: transparent;
+                            border: none;
+                            img {
+    
+                            }
                         }
                     }
                 }

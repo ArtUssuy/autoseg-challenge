@@ -1,0 +1,154 @@
+#lists {
+    height: 100%;
+    .lists-wrapper { 
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 50px;
+        border: 1px solid #60b999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .list-wrapper {
+            width: 100%;
+            border: 1px solid #60b999;
+            padding: 20px;
+            box-sizing: border-box;
+            .list-details {
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .list-name {
+                    display: flex;
+                    align-items: center;
+                    .list-icon {
+                        margin-right: 5px;
+                    }
+                    .list-name {
+                        font-family: $sf-regular;
+                        color: #564337;
+                    }
+                    .list-update-input {
+                        display: none;
+                        &:focus {
+                            outline: 0;
+                        }
+                    }
+                }
+                .list-buttons {
+                    button {
+                        cursor: pointer;
+                        background-color: transparent;
+                        border: none;
+                        &:focus {
+                            outline: 0;
+                        }
+                    }
+                }
+            }
+            .add-task-container {
+                width: 90%;
+                margin: 0 auto;
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                .add-task-wrapper {
+                    position: relative;
+                    input {
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding: 5px;
+                        border: 1px solid #ef7734;
+                        border-radius: 5px;
+                        &:focus {
+                            outline: 0;
+                        }
+                    }
+                    .add-task-button {
+                        cursor: pointer;
+                        position: absolute;
+                        right: 3px;
+                        top: 3px;
+                        border: none;
+                        background-color: transparent;
+                        display: none;
+                        padding: 0;
+                        &:focus {
+                            outline: 0;
+                        }
+                        img {
+                            width: 90%;
+                        }
+                    }
+                    &:last-child {
+                        input {
+                            display: block;
+                        }
+                        button {
+                            display: block;
+                            cursor: pointer;
+                            position: absolute;
+                            right: 3px;
+                            top: 3px;
+                            border: none;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+            .tasks-wrapper {
+                width: 90%;
+                margin: 10px auto;
+                border-bottom: 1px solid #60b999;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .task-details-wrapper {
+                    span {
+                        font-family: $sf-regular;
+                        color: #564337;
+                    }
+                }
+                .task-button-wrapper {
+                    button {
+                        cursor: pointer;
+                        background-color: transparent;
+                        border: none;
+                        img {
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+            .subtasks-wrapper {
+                width: 80%;
+                margin: 10px auto;
+                border-bottom: 1px solid #60b999;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .subtask-details-wrapper {
+                    span {
+                        font-family: $sf-regular;
+                        font-size: 14px;
+                        color: #564337;
+                    }
+                }
+                .subtask-button-wrapper {
+                    button {
+                        cursor: pointer;
+                        background-color: transparent;
+                        border: none;
+                        img {
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body id="lists">
+    
+    <div class="lists-wrapper">
+
+
+        <div class="list-wrapper"> <!-- LIST WRAPPER-->
+
+            <div class="list-details"> <!-- LIST NAME -->
+                <div class="list-name">
+                    <img class="list-icon" src="/media/assets/icone_lista.png" alt="Icone lista">
+                    <span class="list-name">LISTA 01</span>
+                    <input class="list-update-input" type="text">
+                </div>
+                <div class="list-buttons"> <!-- LIST BUTTONS -->
+                    <button><img src="/media/assets/icone_editar.png" alt=""></button>
+                    <button><img src="/media/assets/icone_deletar_lista.png" alt=""></button>
+                </div>
+            </div>
+
+            <div id="add-task-container" class="add-task-container"> <!-- ADD TASKS CONTAINER -->
+                <div class="add-task-wrapper"> <!-- ADD TASK -->
+                    <input required="required" value="" placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
+                    <button class="add-task-button" id="addTask" type="button">
+                        <img id="addTask-icon" src="/media/assets/botao_adicionar.png" alt="">
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tasks-wrapper"> <!-- TASKS WRAPPER-->
+                <div class="task-details-wrapper"> <!-- TASK NAME-->
+                    <span id="taskName">TAREFA 01</span>
+                </div>
+    
+                <div class="task-button-wrapper">  <!-- TASK BUTTONS-->
+                    <button id="deleteTask" class="delete-task">
+                        <img src="/media/assets/icone_deletar_lista.png" alt="Excluir tarefa">
+                    </button>
+                </div>
+            </div>
+
+            <div class="subtasks-wrapper"> <!-- SUB TASK NAME-->
+                <div class="subtask-details-wrapper"> <!-- SUB TASK DETAILS-->
+                    <span id="subtaskName">SUBTAREFA 01</span>
+                </div>
+    
+                <div class="subtask-button-wrapper">  <!-- SUBTASK BUTTONS-->
+                    <button id="deleteSubtask" class="delete-subtask">
+                        <img src="/media/assets/icone_deletar_lista.png" alt="Excluir tarefa">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/lists.js"></script>
+</body>
+</html>
+
+
+<!-- TASKS -->
+<!--<div class="add-task-wrapper">
+        <input required="required" value="" placeholder="Adicionar tarefa" type="text" class="namesTasks" id="namesTasks">
+        <button class="addTask" id="addTask" type="button">
+            <img id="addTask-icon" src="/media/assets/botao_adicionar.png" alt="">
+        </button>
+    </div> -->
+
+<!-- LIST -->
+<!-- 
+    <div class="list-wrapper" id="list-wrapper">
+        <div class="list">
+            <div class="list-details-wrapper">
+                <img src="" alt="">
+                <input id="inputUpdateListName" class="inputUpdateListName" type="text">
+                <span class="listName" id="listName">${a.nameList}</span>
+            </div>
+
+            <div class="list-button-wrapper ">
+                <button id="updateListName" class="edit-list" >
+                    <img src="/media/assets/icone_editar.png" alt="Editar lista">
+                </button>
+                <button id="deleteList" class="delete-list"" >
+                    <img src="/media/assets/icone_deletar_lista.png" alt="Excluir lista">
+                </button>
+            </div>
+        </div>
+        <div class="tasks">
+            <div class="task-details-wrapper">
+                <span id="taskName">${c}</span>
+            </div>
+
+            <div class="task-button-wrapper">
+                <button id="deleteTask" class="delete-task">
+                    <img src="/media/assets/icone_deletar_lista.png" alt="Excluir tarefa">
+                </button>
+            </div>
+        </div>
+    </div> -->

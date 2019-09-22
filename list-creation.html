@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body id="list-creation">
+    
+    <header>
+        <div class="header-logo-wrapper">
+            <span>do</span>
+            <img src="/media/assets/botao_adicionar.png" alt="">
+            <span>it</span>
+            <img src="/media/assets/botao_adicionar.png" alt="">
+            <span>now</span>
+        </div>
+
+        <div class="header-user-wrapper">
+            <img src="/media/assets/avatar.png" alt="Avatar" class="img-user">
+            <span>Arthur</span>
+        </div>
+    </header>
+
+    <main>
+        <h1>Criar lista</h1>
+        <form action="" id="mainForm">
+            <input required="required" placeholder="Digite o nome da lista..." type="text" class="nameList" id="nameList">
+            <div id="add-task-container" class="add-task-container">
+
+            </div>
+            <div class="buttons-wrapper">
+                <button type="reset">Cancelar</button>
+                <button id="addButtonList">Criar lista</button>
+            </div>
+        </form>
+        <hr>
+        <div class="list-wrapper" id="lists-wrapper">
+
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+    <script src="/js/createList.js"></script>
+</body>
+</html>
