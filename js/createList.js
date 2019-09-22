@@ -96,7 +96,6 @@
 
     function addListenerUpdateList() {
         const updateListButtons = document.querySelectorAll("button#updateListName")
-        console.log(updateListButtons)
         updateListButtons.forEach((updateListButton) => {
             updateListButton.addEventListener("click", updateListName);
         });
@@ -141,7 +140,6 @@
                 })
             }
         })
-        console.log(lists)
     }
 
 /* LIST ADD FUNCTIONS ************************************************************************ */ 
@@ -204,7 +202,6 @@
                             path.firstElementChild.lastElementChild.textContent = inputListName.value
                             inputListName.style.display = "none"
                             spanListName.style.display = "block"
-                            console.log(list.nameList)
                         }
                     })
 
