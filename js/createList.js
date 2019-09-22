@@ -16,25 +16,12 @@
 
     // FUNCTIONS TRIGGERED WHEN DOM IS LOADED
     function loadPage() {
-        mainFormSubmit()
+        addListenerMainFormSubmit()
         createListContent()
         createInputTaskDom()
         addListenerDeleteTask()
         addListenerDeleteList()
-    }
-
-    function addListenerDeleteTask() {
-        const deleteTaskButtons = document.querySelectorAll("button.delete-task")
-        deleteTaskButtons.forEach((deleteTaskButton) => {
-            deleteTaskButton.addEventListener("click", deleteTask);
-        });
-    }
-
-    function addListenerDeleteList() {
-        const deleteListsButtons = document.querySelectorAll("button#deleteList")
-        deleteListsButtons.forEach((deleteListButton) => {
-            deleteListButton.addEventListener("click", deleteList);
-        });
+        addListenerUpdateList()
     }
 
     // CREATE CONTENT TO LIST OF LISTS AND TASKS
@@ -44,11 +31,12 @@
                         <div class="list">
                             <div class="list-details-wrapper">
                                 <img src="" alt="">
-                                <span id="listName">${a.nameList}</span>
+                                <input id="inputUpdateListName" class="inputUpdateListName" type="text">
+                                <span class="listName" id="listName">${a.nameList}</span>
                             </div>
 
                             <div class="list-button-wrapper ">
-                                <button id="editList" class="edit-list" >
+                                <button id="updateListName" class="edit-list" >
                                     <img src="/media/assets/icone_editar.png" alt="Editar lista">
                                 </button>
                                 <button id="deleteList" class="delete-list"" >
@@ -73,12 +61,7 @@
         }).join('')
         document.getElementById("lists-wrapper").innerHTML = newListDom
         addListenerDeleteList()
-    }
-
-    // ADD LISTENER TO MAIN FORM SUBMIT
-    function mainFormSubmit() {
-        const mainForm = document.getElementById("mainForm");
-        mainForm.addEventListener("submit", submitForm)
+        addListenerUpdateList()
     }
 
     // CREATE FIRST INPUT INSIDE DOM
@@ -93,6 +76,34 @@
 
         document.getElementById("add-task-container").innerHTML = firstInputDom
         addFunctionToLastInput()
+    }
+
+    // ADD LISTENERS
+    function addListenerDeleteTask() {
+        const deleteTaskButtons = document.querySelectorAll("button.delete-task")
+        deleteTaskButtons.forEach((deleteTaskButton) => {
+            deleteTaskButton.addEventListener("click", deleteTask);
+        });
+    }
+
+    function addListenerDeleteList() {
+        const deleteListsButtons = document.querySelectorAll("button#deleteList")
+        deleteListsButtons.forEach((deleteListButton) => {
+            deleteListButton.addEventListener("click", deleteList);
+        });
+    }
+
+    function addListenerUpdateList() {
+        const updateListButtons = document.querySelectorAll("button#updateListName")
+        console.log(updateListButtons)
+        updateListButtons.forEach((updateListButton) => {
+            updateListButton.addEventListener("click", updateListName);
+        });
+    }
+
+    function addListenerMainFormSubmit() {
+        const mainForm = document.getElementById("mainForm");
+        mainForm.addEventListener("submit", submitForm)
     }
 
 /* INPUT TASKS FUNCTIONS ************************************************************************ */ 
@@ -161,26 +172,53 @@
         }
     }
 
+    // DELETE LIST FROM ARRAY AND FROM DOM
     function deleteList(e) {
+        
         e.path.map((path) => {
             if(path.className === "list-wrapper") {
                 lists.map((list, b)=> {
-                    if (list.nameList == path.firstElementChild.firstElementChild.lastElementChild.textContent) {
+                    if(list.nameList == path.firstElementChild.firstElementChild.lastElementChild.textContent) {
                         lists.splice(b, 1)
                         path.remove()
                     }
                 })
-
             }
         })
     }
+
+    // UPDATE LIST NAME
+    function updateListName(e) {
+        e.path.map((path) => {
+            if(path.className === "list") {
+                const spanListName = path.firstElementChild.lastElementChild
+                const inputListName = path.firstElementChild.querySelector("input")
+                inputListName.style.display = "block"
+                spanListName.style.display = "none"
+                inputListName.addEventListener("focusout", function(){
+                    lists.map((list, b)=> {
+                        if(list.nameList == path.firstElementChild.lastElementChild.textContent) {
+                            list.nameList = inputListName.value
+                            path.firstElementChild.lastElementChild.textContent = inputListName.value
+                            inputListName.style.display = "none"
+                            spanListName.style.display = "block"
+                            console.log(list.nameList)
+                        }
+                    })
+
+
+                })
+            }
+            // if(path.className === "list-wrapper") {
+            //     lists.map((list, b)=> {
+            //         if(list.nameList == path.firstElementChild.firstElementChild.lastElementChild.textContent) {
+            //             lists.splice(b, 1)
+            //             path.remove()
+            //         }
+            //     })
+            // }
+        })
+
+    }
+
 })();
-
-
-/*
-
-- IMPLEMENTAR FUNCAO PARA DELETAR LISTA
-- IMLEMENTAR FUNCAO PARA EDITAR NOME DA LISTA
-
-
-*/
