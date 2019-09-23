@@ -9,7 +9,69 @@
     <link rel="stylesheet" href="/css/lists-style.css">
 
 </head>
-<body >
+<body id="lists">
     
+        <header>
+            <div class="header-logo-wrapper">
+                <span>do</span>
+                <img src="/media/assets/botao_adicionar.png" alt="">
+                <span>it</span>
+                <img src="/media/assets/botao_adicionar.png" alt="">
+                <span>now</span>
+            </div>
+
+            <div class="header-user-wrapper">
+                <img src="/media/assets/avatar.png" alt="Avatar" class="img-user">
+                <span>Arthur</span>
+            </div>
+        </header>
+
+
+        <main>
+            <h1>Listas</h1>
+            <div class="lists-container">
+                <div class="list-wrapper">
+                    <div class="list">
+                        <div class="list-name">
+                            <img src="/media/assets/icone_lista.png" alt="Icone de lista">
+                            <span id="spanListName">Lista 01</span>
+                        </div>
+                        <div class="list-buttons">
+                            <button><img src="./media/assets/icone_editar.png" alt=""></button>
+                            <button><img src="./media/assets/icone_deletar_lista.png" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="add-task-wrapper">
+                        <input placeholder="Adicionar tarefa" type="text">
+                        <button><img src="/media/assets/botao_adicionar.png" alt="Adicionar tarefa"></button>
+                    </div>
+                    <div class="tasks-container">
+                        <div class="task-wrapper">
+
+                            <div class="task">
+                                <span>Tarefa 01</span>
+                                <img src="/media/assets/icone_deletar_lista.png" alt="">
+                            </div>
+
+                            <div class="subtasks-wrapper">
+                                <div class="subtask">
+                                    <span>Subtarefa 01</span>
+                                    <img src="/media/assets/icone_deletar_lista.png" alt="">
+                                </div>
+                                <div class="subtask">
+                                    <span>Subtarefa 02</span>
+                                    <img src="/media/assets/icone_deletar_lista.png" alt="">
+                                </div>
+                            </div>
+
+                            <div class="add-subtask-wrapper">
+                                <input placeholder="Adicionar sub-tarefa" type="text">
+                                <button><img src="/media/assets/botao_adicionar.png" alt="Adicionar tarefa"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 </body>
 </html>

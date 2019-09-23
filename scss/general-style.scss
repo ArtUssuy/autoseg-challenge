@@ -1,2 +1,9 @@
 // VENDORS
+@import "./vendors/fonts.scss";
 @import "./vendors/reset.scss";
+
+
+// HEADER & FOOTER
+
+@import "./components/default-styles/header.scss";
+@import "./components/default-styles/footer.scss";

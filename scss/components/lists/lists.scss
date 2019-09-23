@@ -1,0 +1,126 @@
+#lists {
+    main {
+        h1 {
+            
+        }
+        .lists-container {
+            width: 500px;
+            border: 1px solid #60b999;
+            border-radius: 5px;
+            margin: 30px auto;
+            .list-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                .list {
+                    width: 100%;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .list-name {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            margin-right: 10px;
+                        }
+                        span {
+                            font-family: $sf-regular;
+                        }
+                    }
+                    .list-buttons {
+                        display: flex;
+                        align-items: center;
+                        button {
+                            border: none;
+                        }
+                    }
+                }
+                .add-task-wrapper {
+                    width: 80%;
+                    margin: 0 auto;
+                    position: relative;
+                    input {
+                        width: 100%;
+                        padding: 10px 2px;
+                        border: 1px solid #ef7734;
+                        border-radius: 5px;
+                    }
+                    button {
+                        border: none;
+                        position: absolute;
+                        top: 6px;
+                        right: 0px;
+                        img {
+
+                        }
+                    }
+                }
+                .tasks-container {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 15px;
+                    .task-wrapper {
+                        width: 75%;
+                        .task {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding-bottom: 5px;
+                            border-bottom: 1px solid #60b999;
+                            span {
+                                font-family: $sf-regular;
+                            }
+                            img {
+                            }
+                        }
+                        .subtasks-wrapper {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            .subtask {
+                                width: 90%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                margin-top: 5px;
+                                span {
+                                    font-family: $sf-regular;
+                                }
+                                img {
+                                    
+                                }
+                            }
+                        }
+                        .add-subtask-wrapper {
+                            width: 90%;
+                            margin: 0 auto;
+                            position: relative;
+                            margin-top: 10px;
+                            input {
+                                width: 100%;
+                                padding: 10px 2px;
+                                border: 1px solid #ef7734;
+                                border-radius: 5px;
+                            }
+                            button {
+                                border: none;
+                                position: absolute;
+                                top: 6px;
+                                right: 0px;
+                                img {
+        
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
