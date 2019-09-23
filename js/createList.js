@@ -27,38 +27,38 @@
     // CREATE CONTENT TO LIST OF LISTS AND TASKS
     function createListContent() {
         const newListDom = lists.map(a => {
-            return `<div class="list-wrapper" id="list-wrapper">
-                        <div class="list">
-                            <div class="list-details-wrapper">
-                                <img src="" alt="">
-                                <input id="inputUpdateListName" class="inputUpdateListName" type="text">
-                                <span class="listName" id="listName">${a.nameList}</span>
-                            </div>
+            return `
+            <div class="list-wrapper" id="list-wrapper">
+                <div class="list">
+                    <div class="list-details-wrapper">
+                        <img src="" alt="">
+                        <input id="inputUpdateListName" class="inputUpdateListName" type="text">
+                        <span class="listName" id="listName">${a.nameList}</span>
+                    </div>
 
-                            <div class="list-button-wrapper ">
-                                <button id="updateListName" class="edit-list" >
-                                    <img src="/media/assets/icone_editar.png" alt="Editar lista">
-                                </button>
-                                <button id="deleteList" class="delete-list"" >
-                                    <img src="/media/assets/icone_deletar_lista.png" alt="Excluir lista">
-                                </button>
-                            </div>
-                        </div>
-                        ${a.namesTasks.map((c) => {
-                            return `<div class="tasks">
-                                <div class="task-details-wrapper">
-                                    <span id="taskName">${c}</span>
-                                </div>
+                    <div class="list-button-wrapper ">
+                        <button id="updateListName" class="edit-list" >
+                            <img src="/media/assets/icone_editar.png" alt="Editar lista">
+                        </button>
+                        <button id="deleteList" class="delete-list"" >
+                            <img src="/media/assets/icone_deletar_lista.png" alt="Excluir lista">
+                        </button>
+                    </div>
+                </div>
+                ${a.namesTasks.map((c) => {
+                    return `
+                <div class="tasks">
+                    <div class="task-details-wrapper">
+                        <span id="taskName">${c}</span>
+                    </div>
 
-                                <div class="task-button-wrapper">
-                                    <button id="deleteTask" class="delete-task"" >
-                                        <img src="/media/assets/icone_deletar_lista.png" alt="Excluir tarefa">
-                                    </button>
-                                </div>
-                            </div>`
-                        }).join('')}
-                    </div>`
-        }).join('')
+                    <div class="task-button-wrapper">
+                        <button id="deleteTask" class="delete-task"" >
+                            <img src="/media/assets/icone_deletar_lista.png" alt="Excluir tarefa">
+                        </button>
+                    </div>
+                </div>`}).join('')}
+            </div>`}).join('')
         document.getElementById("lists-wrapper").innerHTML = newListDom
         addListenerDeleteList()
         addListenerUpdateList()
